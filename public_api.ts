@@ -1,0 +1,1 @@
+export * from './src/app/modules/validate-brazilian-documents/validate-brazilian-documents.module'
