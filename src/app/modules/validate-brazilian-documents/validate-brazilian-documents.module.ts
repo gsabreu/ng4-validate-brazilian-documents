@@ -15,7 +15,9 @@ import { DocumentValidationService } from './service/document-validation.service
   declarations: [
   	ValidateBrazilianDocumentsComponent
   ],
-  exports: [ValidateBrazilianDocumentsComponent],
+  exports: [
+    ValidateBrazilianDocumentsComponent
+  ],
   
 
   providers: [DocumentValidationService]

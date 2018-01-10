@@ -11,19 +11,23 @@ import { DocumentValidationService } from './service/document-validation.service
 
 export class ValidateBrazilianDocumentsComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+              private documentValidationService: DocumentValidationService) { }
 
   ngOnInit() {
   }
 
   public validateCpf(cpf: String) : FormGroup {
-  	let formCpf: FormGroup;
-  	return formCpf = this.formBuilder.group({ 'cnpj': new FormControl(cpf, [DocumentValidationService.cpfValidator]) });
+  	let formCpf: FormGroup = this.formBuilder.group({ 'cpf': new FormControl(cpf, this.documentValidationService.cpfValidator) });
+    console.log(formCpf);
+    
+    return formCpf 
   }
+
 
   public validateCnpj(cnpj: String) : FormGroup {
   	let formCnpj: FormGroup;
-  	return formCnpj = this.formBuilder.group({ 'cnpj': new FormControl(cnpj, [DocumentValidationService.cnpjValidator]) });
+  	return formCnpj = this.formBuilder.group({ 'cnpj': new FormControl(cnpj, this.documentValidationService.cnpjValidator) });
   }
 
 }

@@ -5,7 +5,8 @@ import { ValidateBrazilianDocumentsComponent } from './modules/validate-brazilia
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html' ,
+  providers:[ValidateBrazilianDocumentsComponent]
 })
 
 export class AppComponent {
@@ -16,6 +17,7 @@ export class AppComponent {
 
   public cnpj: String;
   public cpf: String;
+
 
   constructor(private validateBrazilianDocumentsComponent: ValidateBrazilianDocumentsComponent) {
   	this.formCnpj = validateBrazilianDocumentsComponent.validateCnpj(this.cnpj);

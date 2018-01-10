@@ -1,11 +1,10 @@
 import { FormControl }   from '@angular/forms';
 import { Injectable } from '@angular/core';
 
-
+@Injectable()
 export class DocumentValidationService {
 
-@Injectable()
-	static cnpjValidator(control){
+	public cnpjValidator(control){
 		try{
 			let control2 = Object.assign(new FormControl(), control);
 			let cnpj = control2.value;
@@ -44,7 +43,7 @@ export class DocumentValidationService {
 		}catch(e){}
 	}
 
-	static cpfValidator(control){
+	public cpfValidator(control){
 		try{
 			let control2 = Object.assign(new FormControl(), control);
 			let strCPF = control2.value;
